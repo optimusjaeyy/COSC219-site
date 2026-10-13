@@ -23,5 +23,10 @@ I used CSS Grid for the project cards because it makes it easy to create a respo
 
 I used Flexbox for the navigation links because it is well-suited for arranging links in a row and controlling their spacing. I also used flex-wrap so the navigation can stack or wrap on smaller screens instead of becoming difficult to read.
 
+Lab 4: Guessing Game (JavaScript)
+This is a simple word guessiong game where players guess letters to reveal a hidden word while trying not to run out of lives.
+
+The answer that surprised me the most in Part A (warmup.js) was "console.log(0 || "fallback")" As a beginner in JavaScript, I wasn't familiar with how the "||" operator works with values like "0". Since I usually use Java, learning JavaScript handles these expressions differently has been interesting.
+
 AI-Use Declaration:
-I used ChatGPT to guide me through parts of the lab that I needed clarification on. I used it to explain HTML tags and their proper usage when I was unsure how to use them. I also used it to understand CSS concepts better and make improvements to the styling and layout of my website. I reviewed the suggestions and made the changes to my code myself.
+I used ChatGPT to guide me through parts of the lab that I needed clarification on. I used it to explain HTML tags and their proper usage when I was unsure how to use them. I also used it to understand CSS concepts better and make improvements to the styling and layout of my website. I reviewed the suggestions and made the changes to my code myself. Since I am still new to JavaScript, I also used ChatGPT to guide me through each function by providing me clues rather than direct answers, and to explain JavaScript fucntions and syntax that I was unfamiliar with.
