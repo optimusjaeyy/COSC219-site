@@ -118,7 +118,9 @@ function sortedByDistance(trails) {
      anyClosed(openTrails(TRAILS))    →  false
    ---------------------------------------------------------------------- */
 
-function anyClosed(trails) {}
+function anyClosed(trails) {
+  return trails.some((trail) => trail.closed);
+}
 
 /* C2 — allUnder(trails, limit)   are they all shorter than limit km?
      allUnder(TRAILS, 20)  →  true
@@ -126,7 +128,9 @@ function anyClosed(trails) {}
      allUnder([], 5)       →  true      ← yes, really. Think about why.
    ---------------------------------------------------------------------- */
 
-function allUnder(trails, limit) {}
+function allUnder(trails, limit) {
+  return trails.every((trail) => trail.km < limit);
+}
 
 /* C3 — totalDistance(trails)
    Every trail's km added up, rounded to one decimal place.
@@ -137,7 +141,10 @@ function allUnder(trails, limit) {}
    Round with: Math.round(total * 10) / 10
    ---------------------------------------------------------------------- */
 
-function totalDistance(trails) {}
+function totalDistance(trails) {
+  let total = trails.reduce((sum, trail) => sum + trail.km, 0);
+  return Math.round(total * 10) / 10;
+}
 
 /* C4 — longestTrail(trails)
    The trail object with the largest km. undefined for an empty array.
@@ -147,7 +154,12 @@ function totalDistance(trails) {}
    The accumulator does not have to be a number — here it is a trail.
    ---------------------------------------------------------------------- */
 
-function longestTrail(trails) {}
+function longestTrail(trails) {
+  return trails.reduce(
+    (best, trail) => (trail.km > best.km ? trail : best),
+    trails[0],
+  );
+}
 
 /* C5 — countByRating(trails)
    How many of each rating, as an object.
@@ -158,7 +170,12 @@ function longestTrail(trails) {}
      · handle the first time a rating is seen  ( ?? 0 )
    ---------------------------------------------------------------------- */
 
-function countByRating(trails) {}
+function countByRating(trails) {
+  return trails.reduce((counts, trail) => {
+    counts[trail.rating] = (counts[trail.rating] ?? 0) + 1;
+    return counts;
+  }, {});
+}
 
 /* ======================================================================
    PART D — chaining
