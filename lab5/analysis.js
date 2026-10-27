@@ -188,7 +188,13 @@ function countByRating(trails) {
    filter, then map, then reduce. Read it as a sentence.
    ---------------------------------------------------------------------- */
 
-function openDistance(trails) {}
+function openDistance(trails) {
+  let total = trails
+    .filter((trail) => !trail.closed)
+    .map((trail) => trail.km)
+    .reduce((sum, km) => sum + km, 0);
+  return Math.round(total * 10) / 10;
+}
 
 /* D2 — summaryLines(trails)
    One display string per trail, in the original order.
@@ -199,7 +205,16 @@ function openDistance(trails) {}
    Note the em dash — and that "(closed)" only appears when it is.
    ---------------------------------------------------------------------- */
 
-function summaryLines(trails) {}
+function summaryLines(trails) {
+  return trails.map((trail) => {
+    let marker = "";
+    if (trail.closed) {
+      marker = " (closed)";
+    }
+
+    return `${trail.name} — ${trail.km} km, ${trail.rating}${marker}`;
+  });
+}
 
 /* D3 — report(trails)
    An object summarising everything:
@@ -219,4 +234,16 @@ function summaryLines(trails) {}
    is why you wrote them separately.
    ---------------------------------------------------------------------- */
 
-function report(trails) {}
+function report(trails) {
+  let openList = openTrails(trails);
+  let longest = longestTrail(openList);
+
+  return {
+    total: trails.length,
+    open: openList.length,
+    closed: trails.length - openList.length,
+    openKm: openDistance(trails),
+    longestOpen: longest ? longest.name : null,
+    byRating: countByRating(trails),
+  };
+}
