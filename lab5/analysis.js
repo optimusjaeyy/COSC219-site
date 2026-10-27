@@ -66,14 +66,18 @@ function hasWon(word, guessedLetters) {
      trailNames(TRAILS)[0]      →  "Knox Mountain"
    ---------------------------------------------------------------------- */
 
-function trailNames(trails) {}
+function trailNames(trails) {
+  return trails.map((trail) => trail.name);
+}
 
 /* B2 — openTrails(trails)
    Only the trails that are not closed.
      openTrails(TRAILS).length  →  8
    ---------------------------------------------------------------------- */
 
-function openTrails(trails) {}
+function openTrails(trails) {
+  return trails.filter((trail) => !trail.closed);
+}
 
 /* B3 — findByName(trails, name)
    The single matching trail, ignoring case. undefined if there is none.
@@ -84,7 +88,10 @@ function openTrails(trails) {}
    Careful: find returns the ELEMENT. filter would return an array.
    ---------------------------------------------------------------------- */
 
-function findByName(trails, name) {}
+function findByName(trails, name) {
+  name = name.toLowerCase();
+  return trails.find((trail) => trail.name.toLowerCase() === name);
+}
 
 /* B4 — sortedByDistance(trails)
    Shortest first, WITHOUT reordering the array you were given.
@@ -98,7 +105,9 @@ function findByName(trails, name) {}
        Pass a comparator.
    ---------------------------------------------------------------------- */
 
-function sortedByDistance(trails) {}
+function sortedByDistance(trails) {
+  return [...trails].sort((a, b) => a.km - b.km);
+}
 
 /* ======================================================================
    PART C — iterators that answer a question
