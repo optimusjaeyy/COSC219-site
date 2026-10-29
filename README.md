@@ -10,7 +10,7 @@
 
 ## GitHub Pages URL:
 
-[My GitHub Pages](https://optimusjaeyy.github.io/cosc219-site/)
+[My GitHub Pages](https://optimusjaeyy.github.io/COSC219-site/)
 
 _Note: Finding content ideas was the most challenging part for me in making this site._
 
