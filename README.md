@@ -36,8 +36,14 @@ The answer that surprised me the most in Part A (warmup.js) was `console.log(0 |
 
 This lab is a set of functions that answer questions about a data set of 10 Okanagan trails using `map`, `filter`, `find`, `some`, `every`, `reduce`, and `sort`, with no loops. The trap that caught me the most was forgetting that inside an iterator the callback receives a whole trail object, so I kept writing `trail` or made-up property names instead if `trail.km` or `trail.rating`. I also had to remember that `sort` changes the original array, so `sortedByDistance` copies it with `[...trails]` and passes a comparator
 
+## Lab 6:
+
+`#trails` is private so that code outside the class can't push items into it directly, which means the rule in `add()` that only `Trail` objects are accepted holds.
+
+The answer in `lab6/warmup.js` that surprised me the most was `original === copy` being `false` . My prediction was right, I was still surprised that the output was `false` even though `copy` has the same value as `original`. This is because spread creates a new object, whereas `const alias = original;` only gives the same object a second name;
+
 ## AI-Use Declaration:
 
 I used ChatGPT to guide me through parts of the lab that I needed clarification on. I used it to explain HTML tags and their proper usage when I was unsure how to use them. I also used it to understand CSS concepts better and make improvements to the styling and layout of my website. I reviewed the suggestions and made the changes to my code myself. Since I am still new to JavaScript, I also used ChatGPT to guide me through each function by providing me clues rather than direct answers, and to explain JavaScript fucntions and syntax that I was unfamiliar with.
 
-I used ClaudeAI as a tutor to explain how iterator methods work and to guide me on my code through clues and constant feedbacks. I wrote the functions myself from those clues.
+I used ClaudeAI as a tutor. It explained JavaScript concepts to me that I had trouble understanding. It also helped me review my code and gave me feedbacks to improve my code. I wrote most of the functions myself from those clues and constant feedbacks. There were some parts that I struggled a lot to answer so I asked for the solution and made sure to fully understand the solution before using it.
