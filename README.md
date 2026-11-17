@@ -42,6 +42,12 @@ This lab is a set of functions that answer questions about a data set of 10 Okan
 
 The answer in `lab6/warmup.js` that surprised me the most was `original === copy` being `false` . My prediction was right, I was still surprised that the output was `false` even though `copy` has the same value as `original`. This is because spread creates a new object, whereas `const alias = original;` only gives the same object a second name;
 
+## Lab 7:
+
+The listener is on the list instead of the buttons because the buttons are destroyed and rebuilt every redraw, so a listener on a button would be removed along with it, whereas the list stays.
+
+If `loadTrails` did not guard against corrupt data, `JSON.parse` would throw a SyntaxError on invalid text, so the rest of `app.js` would stop at that line and the page would stay blank and unresponsive.
+
 ## AI-Use Declaration:
 
 I used ChatGPT to guide me through parts of the lab that I needed clarification on. I used it to explain HTML tags and their proper usage when I was unsure how to use them. I also used it to understand CSS concepts better and make improvements to the styling and layout of my website. I reviewed the suggestions and made the changes to my code myself. Since I am still new to JavaScript, I also used ChatGPT to guide me through each function by providing me clues rather than direct answers, and to explain JavaScript fucntions and syntax that I was unfamiliar with.
