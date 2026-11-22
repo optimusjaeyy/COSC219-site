@@ -37,6 +37,7 @@ export function render(trails) {
     km.className = "trail-km";
     km.textContent = `${trail.km} km`;
 
+    li.append(name, km);
     results.append(li);
   });
 
